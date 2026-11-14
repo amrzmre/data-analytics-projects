@@ -201,6 +201,18 @@ Importance shows what the model uses, not what causes diabetes. Correlated featu
 
 ![Permutation importance](figures/05-permutation-importance.png)
 
+### Answer to the problem
+
+| Question | Answer |
+|---|---|
+| Can diabetes be predicted from the eight measurements? | **Partly.** The final model ranks patients well (ROC-AUC about 0.84) and beats the 65% baseline on accuracy (0.761 vs 0.652). It is a useful screening aid, not a reliable diagnosis. |
+| Does it catch most diabetic patients? | **About 4 in 5.** At the final threshold (0.30), recall is 0.803, so about 1 in 5 diabetic patients is missed. |
+| What is the cost of catching them? | **Many false alarms.** Precision is 0.622 and specificity is 0.738, so about 1 in 4 healthy patients is flagged. This suits screening only if a follow-up test is cheap. |
+| Which features matter most? | **Glucose, then BMI and age.** Permutation importance (drop in ROC-AUC): glucose 0.157, BMI 0.039, age 0.017. |
+| Which model is best? | **Gradient Boosting, by a small margin.** It ties Logistic Regression on ROC-AUC and leads on specificity at 85% recall (0.686 vs 0.640). |
+| Is it ready for real use? | **No.** It is a learning project on 614 labeled rows. The test set has no labels, so test performance is unknown. |
+
+
 ## 13. Selected Visualisations
 
 The figures appear in the sections where they are discussed. The full set of 6 is in [`figures/`](figures/).
