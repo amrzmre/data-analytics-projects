@@ -198,6 +198,14 @@ The submission file contains `Id` and `SalePrice` for all 1,459 rows. The Kaggle
 
 ## 13. Key Findings
 
+1. `SalePrice` is right-skewed (1.88). A log transform brings the skew to 0.12, so the models predict `log(SalePrice)`.
+2. `OverallQual` (0.80) and `GrLivArea` (0.73) have the strongest correlations with price among the original features.
+3. The engineered `TotalSF` has a correlation of 0.83, higher than any original numeric feature.
+4. Median price differs clearly by neighbourhood, by about three times between the lowest and highest.
+5. Ridge scored lowest on the validation set: RMSE 0.1367, MAE 0.0913, and R² 0.8891, against a baseline RMSE of 0.4106.
+6. Ridge shows no strong overall bias (average residual -0.0118).
+7. The largest errors are overestimates of low-priced houses, two of them in the rare `C (all)` zone.
+
 ### Answer to the problem
 
 | Question | Answer |
@@ -206,14 +214,6 @@ The submission file contains `Id` and `SalePrice` for all 1,459 rows. The Kaggle
 | Which features matter most? | **Overall quality, total living area, and neighbourhood.** `OverallQual` (0.80), `GrLivArea` (0.73), and the engineered `TotalSF` (0.83) have the strongest correlations with price, and median price differs by about three times across neighbourhoods. These come from correlations and plots in the EDA, not from the model, so they show what is related to price, not what the model relies on. |
 | Where does the model make its largest errors? | **On low-priced houses, which it overestimates.** All five largest errors are overestimates, and two are in the rare `C (all)` zone (10 houses). Overall there is no strong bias (average residual -0.0118). |
 | Is the estimate reliable enough to use? | **As a rough guide, yes.** Its typical error is small and its predictions scored 14,227.48 on Kaggle. Treat it with caution for very cheap or unusual houses. The top three models are close, and results come from one validation split of 292 houses. |
-
-1. `SalePrice` is right-skewed (1.88). A log transform brings the skew to 0.12, so the models predict `log(SalePrice)`.
-2. `OverallQual` (0.80) and `GrLivArea` (0.73) have the strongest correlations with price among the original features.
-3. The engineered `TotalSF` has a correlation of 0.83, higher than any original numeric feature.
-4. Median price differs clearly by neighbourhood, by about three times between the lowest and highest.
-5. Ridge scored lowest on the validation set: RMSE 0.1367, MAE 0.0913, and R² 0.8891, against a baseline RMSE of 0.4106.
-6. Ridge shows no strong overall bias (average residual -0.0118).
-7. The largest errors are overestimates of low-priced houses, two of them in the rare `C (all)` zone.
 
 ## 14. Conclusion
 
