@@ -210,7 +210,25 @@ The Naive model is left out of this chart, because its flat line at 1.10 million
 
 ## 13. Key Findings
 
-### Answer to the problem
+**About the data**
+
+1. **Strong upward trend.** Average daily sales rose from about 387,000 units in 2013 to about 856,000 in 2017, roughly 2.2 times higher. Part of this comes from more stores reporting sales (about 46 to 54).
+2. **Strong weekly pattern.** Sunday is the highest day (about 825,000) and Thursday the lowest (about 505,000). Sunday sells about 63% more than Thursday.
+3. **Seasonal peaks.** December is the highest month (about 810,000), and January 1 is a near-zero day every year.
+4. **Promotions go with higher sales, but this is not proof of cause.** From 2014-04-01, average sales rise from about 575,000 on low-promotion days to about 837,000 on high-promotion days (correlation 0.43), but both series grow over time.
+5. **Some signals cannot be used.** Transactions move with sales (0.68), but future transactions are unknown at forecast time. Oil price (-0.63) trends over time like sales, so it is not a reliable signal.
+
+**About the models**
+
+6. **Every model beats the Naive baseline.** The Naive MAE is 269,489 and its WAPE is 32.4%, because the last training day was a Sunday and the forecast sits too high almost every day.
+7. **Exponential Smoothing is best.** It has the lowest MAE (58,380), RMSE (88,832), and WAPE (7.0%), and a small bias (+6,055 units per day).
+8. **A simple weekly repeat is almost as good.** Seasonal Naive has an MAE of 60,672, only 3.8% higher, so the gap is small on a 30-day window.
+9. **Linear Regression and Moving Average are weaker.** Linear Regression follows the weekly shape but forecasts too high (bias +73,844). Moving Average is a flat line and cannot capture the weekly pattern.
+10. **Where the best model misses.** It under-predicts the early August peak (2017-07-31 to 2017-08-02) and over-predicts the weekend of 2017-08-12 to 2017-08-13.
+
+## 14. Answer to the Problem
+
+**Problem:** forecast total daily sales 30 days ahead, to help plan stock, staff, and promotions.
 
 | Question | Answer |
 |---|---|
