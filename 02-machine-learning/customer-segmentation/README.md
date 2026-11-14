@@ -246,7 +246,16 @@ These are suggestions based on the profiles. They have not been tested and shoul
 | Cash advance users | Personal loan or debt consolidation offers, which may be cheaper than cash advances. Monitor credit risk |
 | Full payers | Rewards, cashback, and savings or investment products. Low interest income, but low risk |
 
-## 12. Selected Visualisations
+## 12. Answer to the problem
+
+| Question | Answer |
+|---|---|
+| Can credit card holders be grouped by usage behaviour? | **Yes, into five segments.** K-Means with k = 5 gives groups of 13.0% to 30.9% of customers, with moderate separation (silhouette 0.249). |
+| What are the segments? | **Low-activity, regular buyers with a balance, high-limit heavy users, cash advance users, and full payers.** The main split is between purchase, cash advance, and repayment behaviour. |
+| Which segments are clearest? | **Cash advance users (cluster 3) and full payers (cluster 4)**, with silhouette scores of 0.287 and 0.316. The low-activity group (cluster 0, 0.156) overlaps most with others. |
+| Can the segments support targeted offers? | **Yes, as a first step.** They give a starting point for savings, loan, and wealth management offers (see section 11). Segments describe tendencies, not sharp boundaries, and should be validated with business data before use. |
+
+## 13. Selected Visualisations
 
 All figures are in [`figures/`](figures/). The table shows where each one is used.
 
@@ -265,11 +274,11 @@ All figures are in [`figures/`](figures/). The table shows where each one is use
 | [`10-cluster-profile-heatmap.png`](figures/10-cluster-profile-heatmap.png) | 10 Cluster Profiles |
 | [`11-median-features-by-cluster.png`](figures/11-median-features-by-cluster.png) | 10 Cluster Profiles |
 
-## 13. Conclusion
+## 14. Conclusion
 
 K-Means with k = 5 gives five usable customer segments with different spending, cash advance, and payment behaviour. The model reaches an inertia of 41,544 and a silhouette score of 0.249. The segments have moderate separation and can guide first-stage targeting for savings plans, loans, and wealth management offers.
 
-## 14. Limitations and Future Improvements
+## 15. Limitations and Future Improvements
 
 **Limitations**
 
@@ -287,7 +296,7 @@ K-Means with k = 5 gives five usable customer segments with different spending, 
 3. Try other methods such as Gaussian Mixture Models or hierarchical clustering.
 4. Validate segments with business data such as default rates or product uptake.
 
-## 15. Project Structure
+## 16. Project Structure
 
 ```
 customer-segmentation/
@@ -310,7 +319,7 @@ customer-segmentation/
     └── README.md
 ```
 
-## 16. How to Run
+## 17. How to Run
 
 1. Clone the repository and go to the project folder:
 
