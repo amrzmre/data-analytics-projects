@@ -196,26 +196,57 @@ If CV access were capped or removed, 2,688,500 credits (95.4% of spend) would be
 
 ## 8. Key Findings
 
-1. **Usage is shallow but deep where it exists.** 24.9% of accounts and 33.7% of users made a connection, but active rows averaged 6.2 connections per session.
-2. **CV access is the main behaviour and the main cost.** It is 83.1% of connections and 95.4% of credits, because it costs the most per action.
-3. **Credits are highly concentrated.** The top 10% of accounts (24) used 91.6% of credits. One account used 44.4%, and six Heavy accounts used about 71%.
-4. **Credit use is not explained by job ad volume.** The correlation between job ads and credits is 0.22.
-5. **Active accounts are mostly multi-user.** 78.3% of active accounts have more than one user, against 22.8% of all accounts. Within multi-user accounts, the top user makes up about 71% of credits on average.
-6. **Adoption and intensity are growing.** From November to January, active accounts rose from 33 to 51, active users from 70 to 102, and credits per active account from 15,945 to 24,033.
-7. **Risk is high on several fronts.** Concentration, passive accounts, CV access dependence, and single-user accounts all show up in the risk summary.
+Each finding is followed by a **Why (hypothesis)**: a possible explanation, not a result. The data records activity only, so none of these explanations can be confirmed from it. Each one says what additional data would test it.
+
+**1. Usage is shallow, but deep where it exists.** 24.9% of accounts and 33.7% of users made a connection, but active rows averaged 6.2 connections per session.
+
+- **Why (hypothesis):** every account in the data had at least one session, so the 181 passive accounts logged in but did not connect. They may have been browsing or evaluating the tool, been unable to find suitable candidates, been unsure how credits work or been out of credits, or been low-intent or trial accounts. Active hirers probably work through many candidates in one go once they have an open role, which would explain the 6.2 connections per session.
+- **To test:** account age or plan, credit balance, and search activity before a connection.
+
+**2. CV access is the main behaviour and the main cost.** It is 83.1% of connections and 95.4% of credits.
+
+- **Why:** the credit share is partly by design. CV access is both the most frequent action and the most expensive (500 credits against 200 and 100), so it dominates spend by arithmetic.
+- **Why (hypothesis):** hirers probably use CV access most because it comes first in the hiring workflow. A hirer views a CV before deciding to contact the candidate, so messages and job sends are a smaller, later step. Some contact may also happen outside the tool.
+- **To test:** funnel data from CV access to message to candidate reply.
+
+**3. Credits are highly concentrated.** The top 10% of accounts (24) used 91.6% of credits. One account used 44.4%, and six Heavy accounts used about 71%.
+
+- **Why (hypothesis):** a few large customers, such as big employers or recruitment agencies with many recruiters and roles, probably dominate. The largest account has many users (seven of the top 10 users belong to it). This is a common pattern for paid business tools, where a small group of heavy users generates most of the usage. The top account could also be a special case, such as a test or internal account.
+- **To test:** account size, industry, and plan, and whether account 88547883 is a normal customer.
+
+**4. Credit use is not explained by job ad volume.** The correlation between job ads and credits is 0.22.
+
+- **Why (hypothesis):** credits probably depend on how many candidates a hirer works through per ad, not on how many ads they have. Some accounts may post many ads but search lightly, while the top account spent heavily on 25 ads.
+- **To test:** candidates reviewed per ad, and the type and seniority of roles.
+
+**5. Active accounts are mostly multi-user, and one user usually does most of the work.** 78.3% of active accounts have more than one user, against 22.8% of all accounts. Within multi-user accounts, the top user makes up about 71% of credits on average.
+
+- **Why (hypothesis):** larger hiring teams have more people searching and more roles to fill, so size may explain both the extra users and the extra activity. Within a team, one designated sourcer or power user probably does most of the searching while others use the tool occasionally.
+- **To test:** account size, and whether activity rose within an account after users were added.
+
+**6. Adoption and intensity are growing.** From November to January, active accounts rose from 33 to 51, active users from 70 to 102, and credits per active account from 15,945 to 24,033. Growth slowed in January.
+
+- **Why (hypothesis):** several things could contribute. These include new-year hiring demand, new accounts starting to use the tool, and existing accounts using it more. Three months cannot separate them.
+- **To test:** more months (ideally a full year), and a split between new and existing accounts.
+
+**7. Risk is high on several fronts.** Concentration, passive accounts, CV access dependence, and single-user accounts all show up in the risk summary.
+
+- **Why:** this follows from findings 1 to 5 together and needs no separate explanation.
 
 ## 9. Answer to the Problem
 
 **Problem:** understand how customers use the candidate search tool, where credits are spent, and how dependent the business is on a few accounts.
 
-| Question | Answer |
-|---|---|
-| Who is engaged? | **A minority.** 60 of 241 accounts (24.9%) and 171 of 507 users (33.7%) made at least one connection in the three months. |
-| How do hirers connect? | **Mostly by accessing CVs.** CV access is 83.1% of connections, followed by job sends (13.9%) and messages (3.0%). |
-| Where do the credits go? | **To CV access.** It is 95.4% of the 2.8 million credits used. |
-| Is credit use concentrated? | **Very.** The top 10% of accounts used 91.6% of credits, and one account used 44.4%. |
-| Is usage growing? | **Yes, over these three months.** Active accounts rose from 33 to 51, and credits per active account from 15,945 to 24,033. |
-| Where are the risks? | **Concentration, passive accounts, CV access dependence, and single-user accounts.** Losing a few large accounts would remove most of the credit use. |
+The last column gives a possible reason for each answer. These are hypotheses, not results (see section 8 for how each could be tested).
+
+| Question | Answer | Possible reason (hypothesis) |
+|---|---|---|
+| Who is engaged? | **A minority.** 60 of 241 accounts (24.9%) and 171 of 507 users (33.7%) made at least one connection in the three months. | The other accounts logged in but did not connect. They may have been browsing, trialling, unable to find suitable candidates, or unsure how credits work. |
+| How do hirers connect? | **Mostly by accessing CVs.** CV access is 83.1% of connections, followed by job sends (13.9%) and messages (3.0%). | CV access is probably the first step of the hiring workflow, before a hirer decides to message or send a job. Some contact may happen outside the tool. |
+| Where do the credits go? | **To CV access.** It is 95.4% of the 2.8 million credits used. | Partly by design: CV access is both the most frequent and the most expensive action (500 credits against 200 and 100). |
+| Is credit use concentrated? | **Very.** The top 10% of accounts used 91.6% of credits, and one account used 44.4%. | A few large organisations or agencies with many recruiters and roles probably dominate, which is common for paid business tools. The top account may also be a special case. |
+| Is usage growing? | **Yes, over these three months.** Active accounts rose from 33 to 51, and credits per active account from 15,945 to 24,033. | Possibly new-year hiring demand, new accounts ramping up, and existing accounts using the tool more. Three months cannot separate these. |
+| Where are the risks? | **Concentration, passive accounts, CV access dependence, and single-user accounts.** Losing a few large accounts would remove most of the credit use. | These follow from the points above. Whether they are real dependence or just how large customers behave needs account details to judge. |
 
 ## 10. Suggested Actions
 
@@ -245,6 +276,7 @@ The full report is available as a [Google Slides presentation](https://docs.goog
 5. **Segment thresholds are arbitrary.** Light, Moderate, and Heavy are based on percentiles of active accounts, so the labels depend on this data.
 6. **No account details.** There is no information on company size, industry, or plan, so differences between accounts cannot be explained.
 7. **Correlation is not causation.** For example, active accounts having more users does not show that more users cause more activity.
+8. **Explanations are hypotheses.** The reasons given in the key findings are possible explanations. The data records activity only, so they cannot be confirmed without extra data such as account details, plans, or outcomes.
 
 **Future improvements**
 
@@ -253,6 +285,7 @@ The full report is available as a [Google Slides presentation](https://docs.goog
 3. Study the largest account separately and show results with and without it.
 4. Add account attributes and compare segments.
 5. Show credit distributions on a log scale, because the current histogram is dominated by a few accounts.
+6. Test the hypotheses in section 8 with account attributes, a longer history, and funnel data from CV access to candidate reply.
 
 ## 13. Project Structure
 
@@ -290,7 +323,7 @@ The notebook runs in **Google Colab**. It loads the data by file upload and uses
 
    [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/<your-username>/data-analytics-projects/blob/main/04-candidate-search-tool-analytics/candidate-search-tool-analytics.ipynb)
 
-   You can also upload `Case_Study_Data.ipynb` to Colab yourself.
+   You can also upload `candidate-search-tool-analytics.ipynb` to Colab yourself.
 
 2. Run the first cell to import the libraries (pandas, NumPy, Matplotlib, and seaborn are already installed in Colab).
 
